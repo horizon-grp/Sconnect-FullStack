@@ -1,0 +1,28 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateIDVerificationsTable extends Migration
+{
+    public function up()
+    {
+        Schema::create('id_verifications', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->string('id_card_front');
+            $table->string('id_card_back');
+            $table->string('selfie_with_id');
+            $table->string('status')->default('pending');
+            $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+        });
+    }
+
+    public function down()
+    {
+        Schema::dropIfExists('id_verifications');
+    }
+}

@@ -1,0 +1,362 @@
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Hero Section */
+.heroSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(to right, #f7fafc, #e2e8f0);
+    padding: 20px 20px 60px;
+}
+
+/* Container */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Image Section */
+.imageSection {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.imageSection img {
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Text Section */
+.textSection {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Buttons */
+.primaryButton {
+    background-color: #1d4ed8;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 9999px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.primaryButton:hover {
+    background-color: #2563eb;
+    transform: scale(1.05);
+}
+
+.primaryButton:active {
+    background-color: #1e40af;
+}
+
+/* Glassmorphism */
+.glassmorphism {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+}
+
+/* Falling Particles */
+.fallingParticles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.fallingParticles::before,
+.fallingParticles::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 1%, rgba(255, 255, 255, 0) 1%);
+    background-size: 20px 20px;
+    animation: fallingParticles 10s linear infinite;
+    transform: translateX(-50%);
+}
+
+.fallingParticles::after {
+    animation-delay: -5s;
+}
+
+@keyframes fallingParticles {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(100%);
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Wave Animation */
+.waveAnimation {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+}
+
+/* Content Section */
+.contentSection {
+    min-height: 100vh;
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f7fafc;
+    transform: translateY(100%);
+    transition: transform 1s ease-out;
+}
+
+.contentSection.visible {
+    transform: translateY(0);
+}
+
+.contentSection h2 {
+    margin-bottom: 20px;
+    font-size: 32px;
+    font-weight: 700;
+    color: #333;
+}
+
+.contentSection p {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #666;
+}
+
+/* Content Cards */
+.contentCard {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.contentCard h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.contentCard p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Search Bar */
+.searchBar {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.searchBar input {
+    padding: 10px;
+    border: none;
+    border-radius: 9999px;
+    outline: none;
+    width: 300px;
+    background: transparent;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.searchBar input:focus {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.searchBar button {
+    background-color: #1d4ed8;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 9999px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.searchBar button:hover {
+    background-color: #2563eb;
+    transform: scale(1.05);
+}
+
+.searchBar button:active {
+    background-color: #1e40af;
+}
+
+/* Interactive Card */
+.interactiveCard {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.interactiveCard:hover {
+    transform: scale(1.05);
+}
+
+/* Color Classes */
+.bg-blue-500 {
+    background-color: #3b82f6;
+}
+
+.text-white {
+    color: #ffffff;
+}
+
+.bg-gray-100 {
+    background-color: #f3f4f6;
+}
+
+.text-gray-800 {
+    color: #1f2937;
+}
+
+/* Blob Animation */
+@keyframes blob {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    33% {
+        transform: translate(30px, -50px);
+    }
+    66% {
+        transform: translate(-20px, 20px);
+    }
+}
+
+.animate-blob {
+    animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+    animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+    animation-delay: 4s;
+}
+
+/* Card */
+.card {
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background for a frosted glass effect */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border for depth */
+}
+
+.card:hover {
+    background: rgba(255, 255, 255, 0.2); /* Slightly more opaque on hover */
+    transform: translateY(-5px); /* Lift effect */
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+/* Why Choose Us Section */
+.whyChooseUsSection {
+    padding: 4rem 0;
+    opacity: 0;
+    background: rgba(255, 255, 255, 0.1);
+    transition: opacity 1s ease-in-out;
+}
+
+.whyChooseUsSection.visible {
+    opacity: 1;
+}
